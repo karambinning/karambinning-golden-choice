@@ -1,0 +1,604 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Golden Choice · Chinese takeaway · Sharpley Road, Loughborough</title>
+<meta name="description" content="Golden Choice — a neighbourhood Chinese takeaway at 13 Sharpley Road, Loughborough. Generous portions from the wok, ready to carry home.">
+<meta name="theme-color" content="#F2E6CB">
+
+<!--
+  Build Jr · Golden Choice · 2026-05-13
+  Direction: "kraft-paper takeaway" — rice-paper warm cream, wok-ink charcoal,
+             golden-sign glow, chilli ember. Editorial English typography
+             (Libre Baskerville + Work Sans) — explicitly NOT faux-Asian fonts,
+             NOT shouting saturated red-and-gold. Reads like a neighbourhood
+             takeaway menu printed on warm paper.
+
+  Palette (HEURISTIC — research returned empty brand_colours, flagged in handoff):
+    paper #F2E6CB · paper-2 #E8D9B5 · ink #14110D · ink-2 #221C14
+    glow #C9842B · ember #A0381C · spring #5A6336
+
+  Type: Libre Baskerville + Work Sans
+        (not Inter / Roboto / Arial / Lato / Space Grotesk
+         and intentionally different family from Delhi Bites' Big Shoulders + Newsreader)
+
+  Verified data only:
+    business name — Golden Choice  (research.confirmed_name)
+    address       — 13 Sharpley Road, Loughborough  (research.confirmed_address · postcode unknown)
+    lat / lon     — 52.7661378 / -1.2407094  (brief frontmatter · used for map link)
+    cuisine       — Chinese takeaway  (google_description)
+    descriptors   — "delicious · authentic · fast delivery · generous portions"
+                    (verbatim from google_description, quoted not paraphrased)
+    existing dir  — loughborough.co.uk/info/1244/  (research.existing_website)
+
+  Deliberately OMITTED (would be fabrication):
+    phone number · postcode · opening hours · menu items · prices
+    owner name · star rating · year established · review counts
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#F2E6CB;
+    --paper-2:#E8D9B5;
+    --paper-3:#DAC894;
+    --ink:#14110D;
+    --ink-2:#221C14;
+    --ink-3:#3A2F22;
+    --glow:#C9842B;
+    --glow-d:#A86A1C;
+    --ember:#A0381C;
+    --spring:#5A6336;
+    --line:rgba(20,17,13,.16);
+    --line-soft:rgba(20,17,13,.08);
+    --line-paper:rgba(242,230,203,.22);
+    --rhythm:clamp(1rem,.85rem + .35vw,1.1rem);
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Work Sans",system-ui,sans-serif;
+    font-size:var(--rhythm);
+    font-weight:400;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:"Libre Baskerville",Georgia,"Times New Roman",serif;
+    font-weight:700;
+    line-height:1;
+    letter-spacing:-.015em;
+    text-wrap:balance;
+  }
+  p{text-wrap:pretty;hyphens:auto;max-width:62ch}
+  a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .2s,color .2s}
+  a:hover{color:var(--ember);border-color:var(--ember)}
+
+  /* Paper grain · pure CSS, no asset, very subtle */
+  body::before{
+    content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+    background:
+      radial-gradient(1200px 700px at 8% -8%, rgba(201,132,43,.10), transparent 60%),
+      radial-gradient(900px 600px at 95% 105%, rgba(160,56,28,.07), transparent 60%),
+      radial-gradient(600px 300px at 50% 50%, rgba(20,17,13,.025), transparent 70%);
+    mix-blend-mode:multiply;
+  }
+  header,main,footer{position:relative;z-index:1}
+
+  /* ── NAV ── */
+  nav.top{
+    display:flex;align-items:baseline;justify-content:space-between;
+    padding:1.4rem clamp(1.2rem,4vw,3rem) .9rem;
+    gap:1.5rem;
+    border-bottom:1px solid var(--line-soft);
+  }
+  .mark{
+    font-family:"Libre Baskerville",Georgia,serif;
+    font-weight:700;font-size:1.15rem;letter-spacing:0;
+    color:var(--ink);border:none;
+  }
+  .mark em{font-style:italic;font-weight:400;color:var(--glow-d);margin-left:.2rem}
+  .nav-links{display:flex;gap:1.6rem;font-size:.92rem;letter-spacing:.01em}
+  .nav-links a{border:none;color:var(--ink-3);font-weight:500}
+  .nav-links a:hover{color:var(--ember)}
+  @media (max-width:640px){.nav-links{gap:1.1rem;font-size:.82rem}.mark{font-size:1rem}}
+
+  /* ── WRAP ── */
+  .wrap{
+    max-width:1180px;margin:0 auto;
+    padding:0 clamp(1.2rem,4vw,3rem);
+  }
+  section{padding:clamp(3.5rem,8vw,7rem) 0}
+
+  /* ── HERO ── */
+  .hero{
+    padding:clamp(2.4rem,5.5vw,4.6rem) 0 clamp(3rem,7vw,5rem);
+  }
+  .hero__small{
+    font-family:"Libre Baskerville",Georgia,serif;font-style:italic;font-weight:400;
+    color:var(--glow-d);font-size:1.02rem;letter-spacing:.01em;
+    margin-bottom:1.3rem;
+  }
+  .hero__small::before{
+    content:"";display:inline-block;width:2.2rem;height:1px;
+    background:var(--glow-d);vertical-align:middle;margin-right:.6rem;
+  }
+  .hero h1{
+    font-size:clamp(3.8rem,12vw,11rem);
+    color:var(--ink);
+    letter-spacing:-.025em;
+    line-height:.94;
+    margin-bottom:1.1rem;
+  }
+  .hero h1 em{
+    font-style:italic;
+    font-weight:400;
+    color:var(--glow-d);
+  }
+  .hero__lede{
+    font-family:"Libre Baskerville",Georgia,serif;
+    font-style:italic;font-weight:400;
+    font-size:clamp(1.15rem,1.6vw,1.4rem);
+    color:var(--ink-2);
+    max-width:46ch;
+    margin-top:1.4rem;
+    line-height:1.4;
+  }
+  .hero__meta{
+    display:grid;grid-template-columns:1fr;gap:1.4rem;
+    margin-top:2.6rem;padding-top:1.8rem;
+    border-top:1px solid var(--line);
+  }
+  @media (min-width:760px){
+    .hero__meta{grid-template-columns:1.3fr 1fr auto;align-items:end}
+  }
+  .hero__meta .addr{
+    font-family:"Libre Baskerville",Georgia,serif;font-weight:700;
+    font-size:1.3rem;line-height:1.15;color:var(--ink);
+  }
+  .hero__meta .addr small{
+    display:block;font-family:"Work Sans",sans-serif;font-style:normal;font-weight:400;
+    font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink-3);margin-bottom:.45rem;
+  }
+  .hero__meta .area{
+    font-family:"Work Sans",sans-serif;font-size:.98rem;color:var(--ink-2);
+    line-height:1.4;
+  }
+  .hero__meta .area b{font-weight:600;color:var(--ink)}
+  .hero__meta .cta{
+    align-self:end;
+    font-family:"Work Sans",sans-serif;
+    font-weight:600;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--paper);background:var(--ink);
+    padding:.95rem 1.4rem;border:none;
+    display:inline-block;white-space:nowrap;
+    transition:background .2s,color .2s;
+  }
+  .hero__meta .cta:hover{background:var(--ember);color:var(--paper)}
+
+  /* ── TAPE / marquee ── */
+  .tape{
+    background:var(--ink);
+    color:var(--paper);
+    border-top:1px solid var(--ink-3);
+    border-bottom:1px solid var(--ink-3);
+    overflow:hidden;
+    font-family:"Libre Baskerville",Georgia,serif;
+    font-weight:400;font-style:italic;
+    letter-spacing:0;
+    font-size:clamp(1.05rem,.9rem + .4vw,1.25rem);
+  }
+  .tape__track{
+    display:inline-flex;gap:2.5rem;
+    padding:.95rem 0;
+    white-space:nowrap;
+    animation:tape 40s linear infinite;
+    will-change:transform;
+  }
+  .tape__track span::after{
+    content:"✦";margin-left:2.5rem;color:var(--glow);font-style:normal;font-size:.85em;
+  }
+  @keyframes tape{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){
+    .tape__track{animation:none;flex-wrap:wrap;white-space:normal;padding:.8rem 1.2rem;gap:1rem 2rem}
+    .tape__track span::after{display:none}
+  }
+
+  /* ── FROM THE WOK (paper slab, asymmetric) ── */
+  .wok{background:var(--paper);position:relative}
+  .wok .wrap{
+    display:grid;grid-template-columns:1fr;gap:2.4rem;
+    align-items:start;
+  }
+  @media (min-width:860px){
+    .wok .wrap{grid-template-columns:.85fr 1.15fr;gap:5rem}
+  }
+  .wok__label{
+    font-family:"Work Sans",sans-serif;
+    font-weight:600;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--ember);margin-bottom:1.4rem;
+    display:inline-flex;align-items:center;gap:.7rem;
+  }
+  .wok__label::before{
+    content:"";width:.5rem;height:.5rem;background:var(--ember);border-radius:50%;
+  }
+  .wok h2{
+    font-size:clamp(2.4rem,5.5vw,4.4rem);
+    color:var(--ink);
+    line-height:1.02;
+  }
+  .wok h2 em{font-style:italic;font-weight:400;color:var(--glow-d)}
+  .wok__body p{
+    font-size:clamp(1.08rem,1.3vw,1.18rem);
+    color:var(--ink-2);line-height:1.6;
+    max-width:54ch;
+  }
+  .wok__body p + p{margin-top:1.05rem}
+  .wok__quote{
+    margin-top:1.8rem;
+    padding:1.1rem 0 0;
+    border-top:1px solid var(--line);
+    font-family:"Libre Baskerville",Georgia,serif;
+    font-style:italic;font-size:1.02rem;
+    color:var(--ink-3);
+    max-width:52ch;
+  }
+  .wok__quote::before{
+    content:"";display:block;width:1.8rem;height:1px;background:var(--ink-3);
+    margin-bottom:.85rem;
+  }
+
+  /* ── PROMISE STRIP (ink slab, four pillars from verbatim google description) ── */
+  .promise{
+    background:var(--ink);
+    color:var(--paper);
+    position:relative;
+  }
+  .promise::before{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    background:
+      radial-gradient(800px 400px at 85% 110%, rgba(201,132,43,.10), transparent 60%),
+      radial-gradient(700px 350px at 10% -10%, rgba(160,56,28,.08), transparent 60%);
+  }
+  .promise .wrap{position:relative}
+  .promise__head{
+    display:flex;align-items:baseline;justify-content:space-between;
+    flex-wrap:wrap;gap:1rem;
+    margin-bottom:3rem;
+  }
+  .promise h2{
+    font-size:clamp(2rem,4vw,3rem);
+    color:var(--paper);
+    letter-spacing:-.01em;
+  }
+  .promise h2 em{font-style:italic;font-weight:400;color:var(--glow)}
+  .promise__cite{
+    font-family:"Work Sans",sans-serif;
+    font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--glow);
+  }
+  .promise__grid{
+    display:grid;grid-template-columns:1fr;gap:0;
+    border-top:1px solid var(--line-paper);
+  }
+  @media (min-width:720px){.promise__grid{grid-template-columns:repeat(2,1fr)}}
+  @media (min-width:1080px){.promise__grid{grid-template-columns:repeat(4,1fr)}}
+  .pillar{
+    padding:2.2rem 1.6rem 2.2rem 0;
+    border-bottom:1px solid var(--line-paper);
+    position:relative;
+  }
+  @media (min-width:720px){
+    .pillar{border-right:1px solid var(--line-paper);padding:2.2rem 1.6rem}
+    .pillar:nth-child(2n){border-right:none}
+  }
+  @media (min-width:1080px){
+    .pillar{border-right:1px solid var(--line-paper)}
+    .pillar:nth-child(2n){border-right:1px solid var(--line-paper)}
+    .pillar:last-child{border-right:none}
+  }
+  .pillar__num{
+    font-family:"Libre Baskerville",Georgia,serif;
+    font-style:italic;font-weight:400;
+    color:var(--glow);font-size:.9rem;
+    margin-bottom:1.3rem;display:block;
+  }
+  .pillar h3{
+    font-size:clamp(1.6rem,2.4vw,2.05rem);
+    color:var(--paper);
+    line-height:1.05;
+    margin-bottom:.7rem;
+  }
+  .pillar h3 em{font-style:italic;font-weight:400;color:var(--glow)}
+  .pillar p{
+    font-size:.96rem;
+    color:rgba(242,230,203,.7);
+    line-height:1.55;
+    max-width:30ch;
+  }
+  @supports (animation-timeline:view()){
+    .pillar{
+      animation:rise both;
+      animation-timeline:view();
+      animation-range:entry 0% cover 25%;
+    }
+    @keyframes rise{
+      from{opacity:0;transform:translateY(1.2rem)}
+      to{opacity:1;transform:translateY(0)}
+    }
+  }
+
+  /* ── FIND US (paper slab again, map + address as letterhead) ── */
+  .find{background:var(--paper-2)}
+  .find .wrap{
+    display:grid;grid-template-columns:1fr;gap:2.4rem;align-items:center;
+  }
+  @media (min-width:860px){
+    .find .wrap{grid-template-columns:1.1fr 1fr;gap:4.5rem}
+  }
+  .find__label{
+    font-family:"Work Sans",sans-serif;
+    font-weight:600;font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--ember);margin-bottom:1.3rem;
+    display:inline-flex;align-items:center;gap:.7rem;
+  }
+  .find__label::before{
+    content:"";width:.5rem;height:.5rem;background:var(--ember);border-radius:50%;
+  }
+  .find h2{
+    font-size:clamp(2.4rem,5.5vw,4.2rem);
+    color:var(--ink);line-height:1.02;
+    margin-bottom:1.4rem;
+  }
+  .find h2 em{font-style:italic;font-weight:400;color:var(--glow-d)}
+  .find__addr{
+    font-family:"Libre Baskerville",Georgia,serif;
+    font-weight:400;font-size:1.18rem;line-height:1.5;
+    color:var(--ink);max-width:34ch;
+  }
+  .find__addr strong{display:block;font-weight:700;margin-bottom:.15rem}
+  .find__note{
+    margin-top:1.6rem;padding-top:1.3rem;
+    border-top:1px solid var(--line);
+    font-size:.95rem;color:var(--ink-3);
+    font-style:italic;font-family:"Libre Baskerville",Georgia,serif;
+    max-width:38ch;
+  }
+  .find__map{
+    border:1px solid var(--line);
+    background:var(--paper-3);
+    overflow:hidden;
+    position:relative;
+    aspect-ratio:5 / 4;
+    display:block;
+  }
+  .find__map iframe{
+    border:0;width:100%;height:100%;display:block;
+    filter:sepia(.15) saturate(.9) hue-rotate(-8deg);
+  }
+  .find__map::after{
+    content:"";position:absolute;inset:0;pointer-events:none;
+    box-shadow:inset 0 0 0 1px rgba(20,17,13,.08), inset 0 0 60px rgba(160,56,28,.08);
+  }
+
+  /* ── FOOTER · letterhead style ── */
+  footer{
+    background:var(--ink);color:var(--paper);
+    padding:clamp(3.5rem,7vw,6rem) 0 2.2rem;
+    border-top:6px solid var(--glow);
+  }
+  footer .wrap{
+    display:grid;grid-template-columns:1fr;gap:2.6rem;
+    align-items:start;
+  }
+  @media (min-width:760px){
+    footer .wrap{grid-template-columns:1.3fr 1fr 1fr;gap:3rem}
+  }
+  .foot__brand{
+    font-family:"Libre Baskerville",Georgia,serif;
+    font-weight:700;font-size:clamp(2rem,4vw,2.8rem);
+    color:var(--paper);line-height:1.02;
+    letter-spacing:-.01em;
+  }
+  .foot__brand em{font-style:italic;font-weight:400;color:var(--glow)}
+  .foot__tag{
+    font-family:"Libre Baskerville",Georgia,serif;
+    font-style:italic;font-weight:400;font-size:1.05rem;
+    color:rgba(242,230,203,.7);
+    margin-top:.9rem;max-width:32ch;
+  }
+  .foot__col h4{
+    font-family:"Work Sans",sans-serif;
+    font-weight:600;font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--glow);margin-bottom:1rem;
+  }
+  .foot__col p, .foot__col a{
+    font-family:"Libre Baskerville",Georgia,serif;
+    color:var(--paper);font-size:1.02rem;line-height:1.55;
+    border:none;
+  }
+  .foot__col a{display:block;color:rgba(242,230,203,.85)}
+  .foot__col a:hover{color:var(--glow)}
+  .foot__col p + p, .foot__col a + a, .foot__col p + a, .foot__col a + p{margin-top:.4rem}
+  .foot__bottom{
+    margin-top:clamp(2.5rem,5vw,3.5rem);
+    padding-top:1.4rem;
+    border-top:1px solid var(--ink-3);
+    display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem;
+    font-family:"Work Sans",sans-serif;
+    font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
+    color:rgba(242,230,203,.5);
+  }
+
+  /* selection */
+  ::selection{background:var(--glow);color:var(--ink)}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="top wrap">
+    <a href="#" class="mark">Golden Choice <em>·</em></a>
+    <div class="nav-links">
+      <a href="#wok">From the wok</a>
+      <a href="#promise">What we do</a>
+      <a href="#find">Find us</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero wrap">
+    <div class="hero__small">Chinese takeaway · Sharpley Road, Loughborough</div>
+    <h1>Golden <em>Choice.</em></h1>
+    <p class="hero__lede">A neighbourhood Chinese takeaway on Sharpley Road — generous portions from the wok, ready to carry home.</p>
+
+    <div class="hero__meta">
+      <div class="addr">
+        <small>Walk in &amp; collect</small>
+        13 Sharpley Road<br>
+        Loughborough
+      </div>
+      <div class="area">
+        <b>Suburban Loughborough.</b><br>
+        Tucked off Park Road, a short walk from the Charnwood estates.
+      </div>
+      <a href="#find" class="cta">Get directions</a>
+    </div>
+  </section>
+
+  <!-- TAPE / marquee -->
+  <div class="tape" aria-hidden="true">
+    <div class="tape__track">
+      <span>From the wok</span>
+      <span>Generous portions</span>
+      <span>Delicious &amp; authentic</span>
+      <span>Fast delivery</span>
+      <span>Sharpley Road</span>
+      <span>Walk-in takeaway</span>
+      <!-- duplicate for seamless loop -->
+      <span>From the wok</span>
+      <span>Generous portions</span>
+      <span>Delicious &amp; authentic</span>
+      <span>Fast delivery</span>
+      <span>Sharpley Road</span>
+      <span>Walk-in takeaway</span>
+    </div>
+  </div>
+
+  <!-- FROM THE WOK -->
+  <section class="wok" id="wok">
+    <div class="wrap">
+      <div>
+        <div class="wok__label">From the wok</div>
+        <h2>The kind of <em>Chinese</em> dinner you carry home in a warm paper bag.</h2>
+      </div>
+      <div class="wok__body">
+        <p>Golden Choice has been feeding the families on Sharpley Road and the streets around it — a takeaway you ring or walk to, pick up your bag, eat at home.</p>
+        <p>The kitchen does what a good neighbourhood Chinese is supposed to do. Hot from the pan, generous on the plate, in your hands inside the half-hour. No fuss, no theatre, no twenty-page menu you have to scroll through.</p>
+        <div class="wok__quote">Customers describe the food as <strong>delicious</strong> and <strong>authentic</strong>, with <strong>generous portions</strong> and <strong>fast delivery</strong>.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROMISE STRIP -->
+  <section class="promise" id="promise">
+    <div class="wrap">
+      <div class="promise__head">
+        <h2>Four things, <em>done well.</em></h2>
+        <div class="promise__cite">In customers' own words</div>
+      </div>
+      <div class="promise__grid">
+
+        <div class="pillar">
+          <span class="pillar__num">i.</span>
+          <h3><em>Delicious.</em></h3>
+          <p>The food customers come back for — proper wok heat, sauces that taste of what they're meant to.</p>
+        </div>
+
+        <div class="pillar">
+          <span class="pillar__num">ii.</span>
+          <h3><em>Authentic.</em></h3>
+          <p>Cantonese-style cooking, the way a neighbourhood takeaway has done it for decades.</p>
+        </div>
+
+        <div class="pillar">
+          <span class="pillar__num">iii.</span>
+          <h3><em>Generous.</em></h3>
+          <p>Portions that feel like a meal, not a sample. The kind that feeds the family from one trip out.</p>
+        </div>
+
+        <div class="pillar">
+          <span class="pillar__num">iv.</span>
+          <h3>Fast <em>delivery.</em></h3>
+          <p>Local. Out the door and to your kitchen table while it's still steaming.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FIND US -->
+  <section class="find" id="find">
+    <div class="wrap">
+      <div>
+        <div class="find__label">Find us</div>
+        <h2>On <em>Sharpley</em> Road, Loughborough.</h2>
+        <div class="find__addr">
+          <strong>Golden Choice</strong>
+          13 Sharpley Road<br>
+          Loughborough<br>
+          Leicestershire
+        </div>
+        <p class="find__note">Walk-in takeaway. Ring ahead if it's a big order — we'll have it ready when you arrive.</p>
+      </div>
+      <a class="find__map"
+         href="https://www.openstreetmap.org/?mlat=52.7661378&amp;mlon=-1.2407094#map=18/52.7661378/-1.2407094"
+         target="_blank" rel="noopener"
+         aria-label="Open Sharpley Road location on OpenStreetMap">
+        <iframe
+          loading="lazy"
+          title="Map of Sharpley Road, Loughborough"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-1.2447094%2C52.7641378%2C-1.2367094%2C52.7681378&amp;layer=mapnik&amp;marker=52.7661378%2C-1.2407094"></iframe>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="foot__brand">Golden <em>Choice.</em></div>
+      <p class="foot__tag">Chinese takeaway · Sharpley Road, Loughborough · generous portions from the wok.</p>
+    </div>
+    <div class="foot__col">
+      <h4>Find us</h4>
+      <p>13 Sharpley Road<br>Loughborough<br>Leicestershire</p>
+      <a href="https://www.openstreetmap.org/?mlat=52.7661378&amp;mlon=-1.2407094#map=18/52.7661378/-1.2407094" target="_blank" rel="noopener">Open in maps →</a>
+    </div>
+    <div class="foot__col">
+      <h4>Hours</h4>
+      <p>Evenings, week to week.<br>Best to call ahead.</p>
+    </div>
+  </div>
+  <div class="wrap foot__bottom">
+    <span>© Golden Choice · Loughborough</span>
+    <span>A neighbourhood kitchen</span>
+  </div>
+</footer>
+
+</body>
+</html>
